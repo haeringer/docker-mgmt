@@ -12,6 +12,12 @@
 #
 ##############################################################
 
+if [ "$1" == "" ] || [ "$2" == "" ] || [ "$3" == "" ]; then
+  printf "Please provide all arguments:\n 1 - Container Name\n 2 - URL to <repo>.tar.gz\n 3 - docker-compose file name\n"
+  exit 1
+fi
+
+
 container=$1
 repository_tar=$2
 composefile=$3

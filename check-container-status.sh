@@ -5,10 +5,15 @@
 # Takes the Docker container name or ID as argument.
 ##############################################################
 
+if [ "$1" == "" ]; then
+  printf "Please provide a container name\n"
+  exit 1
+fi
+
 container=$1
 
 
-if [ -z ${container} ]; then
+if [ -z $container ]; then
   echo "Container ID or name required"
   exit 3
 elif [ -z $(which docker) ]; then
